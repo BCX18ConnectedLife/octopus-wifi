@@ -69,7 +69,7 @@ void publishToHub(String payload) {
 
 String sensorUpdateString(String featureName, float sensorValue, float minValue, float maxValue, String units) {
     String output = "{\"topic\": \"";
-    output += HUB_TENANT;
+    output += THINGS_NAMESPACE;
     output += "/";
     output += deviceId;
     output += "/things/twin/commands/modify\",\"headers\": {\"response-required\": false},";
@@ -86,10 +86,10 @@ String sensorUpdateString(String featureName, float sensorValue, float minValue,
 
 String sensor3dUpdateString(String featureName, float xValue, float yValue, float zValue, String units) {
     String output = "{\"topic\": \"";
-    output += HUB_TENANT;
+    output += THINGS_NAMESPACE;
     output += "/";
     output += deviceId;
-    output += "/things/twin/commands/modify\",\"headers\": {\"response-required\": false},";
+    output += "/things/twin/commands/modify\",\"headers\": {\"response-required\": true},";
     output += "\"path\": \"/features/" + featureName + "/properties/status\", \"value\": {\"xValue\": " + xValue;
     output += ", \"yValue\": ";
     output += yValue;

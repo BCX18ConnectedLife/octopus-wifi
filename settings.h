@@ -31,7 +31,8 @@ const int loopDelay = 100;
 // ---- Network configuration ----
 
 /* Bosch IoT Hub MQTT configuration */
-#define HUB_TENANT "BCX18"
+#define HUB_TENANT "..."
+#define THINGS_NAMESPACE "..."
 
 const char* mqttBroker = "mqtt.bosch-iot-hub.com";
 const int   mqttPort = 8883;
